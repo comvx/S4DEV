@@ -1,0 +1,79 @@
+@Metadata.layer: #CUSTOMER
+
+@UI: {
+    headerInfo: {
+      typeName: 'Flight Booking',
+      typeNamePlural: 'Flight Bookings',
+      title: { value: 'BookingNumber'},
+      description: { value: 'BookingDate' }
+    }
+}
+annotate view Z27_C_BOOKINGTP with
+{
+
+  @UI.facet: [ { label: 'Booking Data', type: #IDENTIFICATION_REFERENCE } ]
+
+  @UI.hidden: true
+  BookingGuid;
+
+  @UI.hidden: true
+  CustomerGuid;
+
+  @UI: {
+       lineItem: [ { position: 10, importance: #HIGH } ],
+       identification: [ { position: 10, importance: #HIGH } ]
+  }
+  BookingNumber;
+
+  @UI: {
+      lineItem: [ { position: 20, importance: #HIGH } ],
+      identification: [ { position: 20, importance: #HIGH } ]
+  }
+  AirlineID;
+
+  @UI: {
+      lineItem: [ { position: 30, importance: #HIGH } ],
+      identification: [ { position: 30, importance: #HIGH } ]
+  }
+  ConnectionNumber;
+
+  @UI: {
+      lineItem: [ { position: 40, importance: #HIGH } ],
+      identification: [ { position: 40, importance: #HIGH } ]
+  }
+  FlightDate;
+
+  @UI: {
+      identification: [ { position: 50, importance: #MEDIUM } ]
+  }
+  Class;
+
+  @UI: {
+      lineItem: [ { position: 60, importance: #MEDIUM } ],
+      identification: [ { position: 60, importance: #MEDIUM } ]
+  }
+  BookingDate;
+
+  @UI: {
+       lineItem: [ { position: 70, importance: #MEDIUM } ],
+       identification: [ { position: 70, importance: #MEDIUM } ]
+
+  }
+  ForeignCurrencyPayment;
+
+  @UI: {
+       identification: [ { position: 80, importance: #MEDIUM } ]
+  }
+  ForeignCurrency;
+
+  @UI: {
+       identification: [ { position: 90, importance: #LOW } ]
+  }
+  AgencyNumber;
+
+  @UI: {
+       lineItem: [ { position: 100, importance: #MEDIUM } ],
+       identification: [ { position: 100, importance: #MEDIUM } ]
+  }
+  IsCancelled;
+}
